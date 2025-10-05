@@ -1,3 +1,34 @@
+# ARMORA Project Structure
+
+```
+ARMORA
+ ├── src
+ │    ├── assets          # Images, fonts, icons
+ │    ├── components      # Reusable UI components
+ │    │     ├── atoms
+ │    │     ├── molecules
+ │    │     └── organisms
+ │    ├── navigation      # Navigation stacks / tab configs
+ │    ├── screens         # Screen-level UI
+ │    │     ├── Home
+ │    │     │    └── HomeScreen.tsx
+ │    │     ├── Splash
+ │    │     │    └── SplashScreen.tsx
+ │    │     └── Profile
+ │    ├── theme           # Colors, typography, spacing, styles
+ │    ├── hooks           # Custom hooks (e.g., useAuth, useFetch)
+ │    ├── services        # API clients, storage utils
+ │    └── utils           # Helpers, formatters
+ │
+ ├── App.tsx              # Entry point
+ ├── app.json
+ ├── tsconfig.json
+ ├── package.json
+ ├── README.md
+```
+
+---
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).

@@ -1,8 +1,17 @@
-import { Redirect } from 'expo-router';
-import { useAuth } from './_appContext';
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import SplashScreen from "@/src/screens/Splash/SplashScreen";
+import AuthGate from "./AuthGate";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
-  const { user, loading } = useAuth();
-  if (loading) return null;
-  return <Redirect href={user ? '/(protected)' : '/(auth)/login'} />;
-}
+const index = () => {
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
+      <AuthGate />
+    </SafeAreaView>
+  );
+};
+
+export default index;
+
+const styles = StyleSheet.create({});
