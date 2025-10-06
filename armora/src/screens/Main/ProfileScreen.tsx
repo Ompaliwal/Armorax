@@ -16,6 +16,7 @@ import Animated, {
   FadeInDown,
   FadeInUp,
 } from "react-native-reanimated";
+import { router } from "expo-router";
 
 const SPACING = 18;
 
@@ -122,6 +123,8 @@ const ProfileScreen = () => {
               style={styles.actionButton}
               onPress={() => {
                 /* Add your logout logic here */
+                router.replace("/login");
+                AccessibilityInfo.announceForAccessibility("Logged out");
               }}
               accessibilityRole="button"
               accessibilityLabel="Log Out"

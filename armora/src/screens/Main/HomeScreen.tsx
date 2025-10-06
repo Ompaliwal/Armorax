@@ -10,10 +10,9 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
       <View style={styles.scrollContent}>
+        {/* Animate Score and HomeCards together for unified entrance */}
         <Animated.View entering={FadeInDown.duration(800)}>
           <Score score={3} outOf={5} />
-        </Animated.View>
-        <Animated.View entering={FadeInDown.duration(800).delay(200)}>
           <HomeCards />
         </Animated.View>
         <Animated.Text

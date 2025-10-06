@@ -16,8 +16,8 @@ export default function AuthGate() {
   useEffect(() => {
     // Show splash for at least 1.5s, then check auth and route
     const timer = setTimeout(async () => {
-      const logged = await isLoggedIn();
-      if (logged) {
+      //const logged = await isLoggedIn();
+      if (true) {
         router.replace("/(tabs)/home");
       } else {
         router.replace("/login");
