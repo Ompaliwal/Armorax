@@ -3,7 +3,11 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HomeCards from "@/src/components/atoms/HomeCards";
 import SecurityGrid from "@/src/components/molecules/SecurityGrid";
-import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  FadeInUp,
+} from "react-native-reanimated";
 import Score from "@/src/components/molecules/Score";
 
 const HomeScreen = () => {
@@ -16,13 +20,13 @@ const HomeScreen = () => {
           <HomeCards />
         </Animated.View>
         <Animated.Text
-          entering={FadeInUp.duration(800).delay(400)}
+          entering={FadeInUp.duration(800).delay(200)}
           style={styles.headerText}
         >
           Explore Your Security Suite
         </Animated.Text>
         <Animated.View
-          entering={FadeInDown.duration(800).delay(600)}
+          entering={FadeInDown.duration(800).delay(400)}
           style={styles.tilecontainer}
         >
           <SecurityGrid />
