@@ -5,7 +5,8 @@ import { Ionicons, Feather, MaterialIcons } from "@expo/vector-icons";
 import FeatureCard from "../atoms/FeatureCard";
 import { router } from "expo-router";
 
-const CARD_GRADIENT = ["#00bf8f", "#001510"];
+// ✅ FIX: Make this a readonly tuple
+const CARD_GRADIENT = ["#00bf8f", "#001510"] as const;
 
 // Define valid routes as a const array for type safety
 const VALID_ROUTES = [
@@ -67,7 +68,7 @@ const features: Feature[] = [
 
 function navigateToFeatureScreen(feature: Feature) {
   // Use relative path for expo-router compatibility
-  router.push({ pathname: `../(features)/${feature.redirect}` });
+  router.push(`/(features)/${feature.redirect}`);
 }
 
 export default function SecurityGrid() {

@@ -1,4 +1,3 @@
-// src/components/FeatureCard.tsx
 import React from "react";
 import {
   TouchableOpacity,
@@ -15,7 +14,9 @@ type FeatureCardProps = {
   onPress?: () => void;
   style?: ViewStyle;
   labelStyle?: TextStyle;
-  gradientColors?: string[]; // custom gradient
+
+  // ✅ Define gradientColors as a tuple (requires at least 2 colors)
+  gradientColors?: readonly [string, string, ...string[]];
 };
 
 export default function FeatureCard({
@@ -24,7 +25,9 @@ export default function FeatureCard({
   onPress,
   style,
   labelStyle,
-  gradientColors = ["#00bf8f", "#001510"], // default dark gradient
+
+  // ✅ Provide default colors inline, with `as const` to make it a readonly tuple
+  gradientColors = ["#00bf8f", "#001510"] as const,
 }: FeatureCardProps) {
   return (
     <TouchableOpacity style={style} onPress={onPress} activeOpacity={0.85}>

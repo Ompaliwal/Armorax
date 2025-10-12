@@ -1,10 +1,10 @@
+// backend/server.js
 import app from "./src/app.js";
 import "dotenv/config";
-import { connectDB } from "./src/db/db.js";
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  connectDB();
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`🌐 Access at: http://192.168.29.165:${PORT}/ping`);
 });
